@@ -1,7 +1,15 @@
 <template></template>
 
+<template>
+  <div class="loading">
+    <span></span>
+  </div>
+</template>
+
 <script>
-export default {};
+export default {
+  name: "loading",
+};
 </script>
 
 <style lang="scss">
