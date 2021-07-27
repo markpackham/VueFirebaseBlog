@@ -1,7 +1,41 @@
-<template></template>
+<template>
+  <div class="blog-card-wrap">
+    <div class="blog-cards container">
+      <div class="toggle-edit">
+        <span>Toggle Editting Post</span>
+        <input type="checkbox" v-model="editPost" />
+      </div>
+      <BlogCard
+        :post="post"
+        v-for="(post, index) in sampleBlogCards"
+        :key="index"
+      />
+    </div>
+  </div>
+</template>
 
 <script>
-export default {};
+import BlogCard from "../components/BlogCard";
+export default {
+  name: "blogs",
+  components: { BlogCard },
+  computed: {
+    sampleBlogCards() {
+      return this.$store.state.sampleBlogCards;
+    },
+    editPost: {
+      get() {
+        return this.$store.state.editPost;
+      },
+      set(payload) {
+        this.$store.commit("toggleEditPost", payload);
+      },
+    },
+  },
+  beforeDestroy() {
+    this.$store.commit("toggleEditPost", false);
+  },
+};
 </script>
 
 <style lang="scss" scoped>

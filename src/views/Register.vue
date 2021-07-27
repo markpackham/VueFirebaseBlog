@@ -1,7 +1,9 @@
 <template></template>
 
 <script>
-export default {};
+export default {
+  name: "register",
+};
 </script>
 
 <style lang="scss" scoped>
