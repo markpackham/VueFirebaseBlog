@@ -1,5 +1,3 @@
-<template></template>
-
 <template>
   <div class="loading">
     <span></span>

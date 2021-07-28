@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div class="post-view"></div>
+</template>
 
 <script>
 export default {

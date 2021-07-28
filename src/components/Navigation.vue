@@ -10,8 +10,12 @@
         <ul v-show="!mobile">
           <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
           <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
-          <router-link class="link" to="#">Create Post</router-link>
-          <router-link class="link" to="#">Login/Register</router-link>
+          <router-link class="link" :to="{ name: 'CreatePost' }"
+            >Create Post</router-link
+          >
+          <router-link class="link" :to="{ name: 'Login' }"
+            >Login/Register</router-link
+          >
         </ul>
       </div>
     </nav>
@@ -20,8 +24,12 @@
       <ul class="mobile-nav" v-show="mobileNav">
         <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
         <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
-        <router-link class="link" to="#">Create Post</router-link>
-        <router-link class="link" to="#">Login/Register</router-link>
+        <router-link class="link" :to="{ name: 'CreatePost' }"
+          >Create Post</router-link
+        >
+        <router-link class="link" :to="{ name: 'Login' }"
+          >Login/Register</router-link
+        >
       </ul>
     </transition>
   </header>
@@ -29,10 +37,16 @@
 
 <script>
 import menuIcon from "../assets/Icons/bars-regular.svg";
+// import userIcon from "../assets/Icons/user-alt-light.svg";
+// import adminIcon from "../assets/Icons/user-crown-light.svg";
+// import signOutIcon from "../assets/Icons/sign-out-alt-regular.svg";
 export default {
   name: "navigation",
   components: {
     menuIcon,
+    // userIcon,
+    // adminIcon,
+    // signOutIcon,
   },
   data() {
     return {

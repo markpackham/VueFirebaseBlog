@@ -1,4 +1,6 @@
-<template></template>
+<template>
+  <div class="create-post"></div>
+</template>
 
 <script>
 export default {
