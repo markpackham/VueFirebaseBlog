@@ -5,7 +5,7 @@
       :modalMessage="modalMessage"
       v-on:close-modal="closeModal"
     />
-    <Loading v-if="1 > 2" />
+    <Loading v-if="loading" />
     <div class="form-wrap">
       <form class="reset">
         <p class="login-register">
@@ -36,11 +36,24 @@ import Modal from "../components/Modal";
 import Loading from "../components/Loading";
 export default {
   name: "forgotPassword",
-  data() {},
+  data() {
+    return {
+      email: "",
+      modalActive: false,
+      modalMessage: "",
+      loading: null,
+    };
+  },
   components: {
     email,
     Modal,
     Loading,
+  },
+  methods: {
+    closeModal() {
+      this.modalActive = !this.modalActive;
+      this.email = "";
+    },
   },
 };
 </script>
