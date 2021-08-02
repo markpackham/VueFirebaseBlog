@@ -4,8 +4,8 @@
       <div class="left">
         <div class="col-1">
           <router-link class="header" :to="{ name: 'Home' }"
-            >VueFirebaseBlog
-          </router-link>
+            >VueFirebaseBlog</router-link
+          >
           <ul>
             <li>
               <a href="#"><youTube class="svg-icon" /></a>
@@ -27,10 +27,10 @@
             <router-link class="link" :to="{ name: 'Blogs' }"
               >Blogs</router-link
             >
-            <router-link class="link" :to="{ name: 'CreatePost' }"
+            <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }"
               >Create Post</router-link
             >
-            <router-link class="link" :to="{ name: 'Login' }"
+            <router-link v-if="!user" class="link" :to="{ name: 'Login' }"
               >Login In / Register</router-link
             >
           </ul>
@@ -56,14 +56,14 @@ export default {
     instagram,
     linkedin,
   },
-  // computed: {
-  //   user() {
-  //     return this.$store.state.user;
-  //   },
-  //   admin() {
-  //     return this.$store.state.profileAdmin;
-  //   },
-  // },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+    admin() {
+      return this.$store.state.profileAdmin;
+    },
+  },
 };
 </script>
 
