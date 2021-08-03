@@ -1,5 +1,10 @@
 <template>
-  <div class="admin"></div>
+  <div class="admin">
+    <p>
+      Admin section not used since it'd rely on Firebase functions that can only
+      be accessed via the paid Firebase version.
+    </p>
+  </div>
 </template>
 
 <script>

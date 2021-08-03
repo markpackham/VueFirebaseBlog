@@ -1,8 +1,26 @@
-<template></template>
+<template>
+  <div class="modal" ref="modal">
+    <div class="modal-content">
+      <close @click="closePreview" class="icon" />
+      <img :src="this.blogCoverPhoto" alt="" />
+    </div>
+  </div>
+</template>
 
 <script>
+import close from "../assets/Icons/times-circle-light.svg";
 export default {
-  name: "blogCoverPreview",
+  components: {
+    close,
+  },
+  methods: {
+    closePreview() {},
+  },
+  computed: {
+    blogCoverPhoto() {
+      return this.$store.state.blogPhotoFileURL;
+    },
+  },
 };
 </script>
 

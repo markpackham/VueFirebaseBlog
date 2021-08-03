@@ -49,7 +49,8 @@ export default {
   },
   methods: {
     updateProfile() {
-      return;
+      this.$store.dispatch("updateUserSettings");
+      this.modalActive = !this.modalActive;
     },
     closeModal() {
       this.modalActive = !this.modalActive;
