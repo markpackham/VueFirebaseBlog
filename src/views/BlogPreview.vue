@@ -1,10 +1,27 @@
 <template>
-  <div class="post-view"></div>
+  <div class="post-view">
+    <div class="constainer quillWrapper">
+      <h2>{{ this.blogTitle }}</h2>
+      <img :src="blogCoverPhoto" alt="Blog Cover Photo" />
+      <div class="post-content ql-editor" v-html="blogHTML"></div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "blogPreview",
+  name: "PostPreview",
+  computed: {
+    blogTitle() {
+      return this.$store.state.blogTitle;
+    },
+    blogHTML() {
+      return this.$store.state.blogHTML;
+    },
+    blogCoverPhoto() {
+      return this.$store.state.blogPhotoFileURL;
+    },
+  },
 };
 </script>
 
