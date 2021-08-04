@@ -6,7 +6,8 @@
           {{ post.title }}
         </h2>
         <h2 v-else>
-          {{ post.title }}
+          <!-- {{ post.title }} -->
+          {{ post.blogTitle }}
         </h2>
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p class="content-preview" v-else>{{ post.blogHTML }}</p>
